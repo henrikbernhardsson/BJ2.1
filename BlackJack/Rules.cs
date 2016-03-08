@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-
-    //Fat: over 21
-    // Winner if 21 (Black Jack)
+    //1. The one closest but not over 21 wins the round. 
+    //2. Over 21, are fat and loose the game. 
+    //3. If the dealer has 17, he stop the round.
+    //5. Face cards(i.e.Knights, Queens and Kings) have the value of 10. 
+    //6. Ace has either value of 1 or 11 
+    //7. Most have two cards. 
+    
     // Least 2 cards to every player + dealer.
     // under value 21 move on
     // cw (one more card? y/n)
-    // dealer stays at 17
     class Rules
     {
     }

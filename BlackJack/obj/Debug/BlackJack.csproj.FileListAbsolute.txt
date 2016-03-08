@@ -1,1 +1,2 @@
 C:\Users\Leonardo\Documents\GitHub\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\fager\Source\Repos\BJ2.1\BlackJack\bin\Debug\BlackJack.exe.config
