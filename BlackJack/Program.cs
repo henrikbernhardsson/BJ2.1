@@ -12,22 +12,29 @@ namespace BlackJack
 
         static void Main(string[] args)
         {
+            int run = 0;
             Deck deck1 = new Deck();
             deck1.Shuffle();
-            
+
             Console.WriteLine("---♥-♠-♦-♣--Welome-To-Blackjack--♥-♠-♦-♣---");
+
+            while (run <= 51)
+            {
+                Console.WriteLine(deck1.DealOneCard());
+                run++;
+            }
 
 
 
             //Testing the logic: Deals one random card.
-            for (int i = 0; i < 52; i++)
-            {
-                Console.Write("{0,-19}", deck1.DealOneCard());
-                if ((i + 1) % 4 == 0)
-                {
-                    Console.WriteLine();
-                }
-            }
+            //for (int i = 0; i < 52; i++)
+            //{
+            //    Console.Write("{0,-19}", deck1.DealOneCard());
+            //    if ((i + 1) % 4 == 0)
+            //    {
+            //        Console.WriteLine();
+            //    }
+            //}
 
             Console.ReadKey();
 

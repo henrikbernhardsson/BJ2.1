@@ -40,11 +40,10 @@ namespace BlackJack
         }
         public Card DealOneCard()   // Deals one card from the deck.
         {
-            if (currentCard < 1)
-                return deck[currentCard++];
-            else
-                return null;
+
+            return deck[currentCard++];
         }
+
 
 
     }
