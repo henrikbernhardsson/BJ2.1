@@ -13,6 +13,12 @@ namespace BlackJack
 
         static void Main(string[] args)
         {
+            
+            Console.WriteLine("---♥-♠-♦-♣--Welome-To-Blackjack--♥-♠-♦-♣---");
+
+
+
+
             Player player = new Player(100);
             string choice = Console.ReadLine();
             var result = true;

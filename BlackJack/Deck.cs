@@ -25,8 +25,8 @@ namespace BlackJack
             currentCard = 0;
             randomNumber = new Random();
             for (int count = 0; count < deck.Length; count++)
-                deck[count] = new Card(faces[count / 11], suits [count / 13]);
+            deck[count] = new Card(faces[count / 11], suits [count / 13]);
 
         }
     }
-}
+}  
