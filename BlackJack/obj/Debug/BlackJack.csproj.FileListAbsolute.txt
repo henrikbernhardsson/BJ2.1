@@ -5,3 +5,9 @@ C:\Users\fager\Source\Repos\BJ2.1\BlackJack\bin\Debug\BlackJack.pdb
 C:\Users\fager\Source\Repos\BJ2.1\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache
 C:\Users\fager\Source\Repos\BJ2.1\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\fager\Source\Repos\BJ2.1\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\obj\Debug\BlackJack.csprojResolveAssemblyReference.cache
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Henrik\Source\Repos\BJ2.12\BlackJack\obj\Debug\BlackJack.pdb

@@ -15,7 +15,7 @@ namespace BlackJack
         private const int numberOfCards = 52;
         private Random randomNumber;
 
-      
+
         public Deck()
         {
             string[] faces = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
@@ -25,8 +25,27 @@ namespace BlackJack
             currentCard = 0;
             randomNumber = new Random();
             for (int count = 0; count < deck.Length; count++)
-            deck[count] = new Card(faces[count / 11], suits [count / 13]);
-
+                deck[count] = new Card(faces[count % 13], suits[count / 13]);
         }
+        public void Shuffle()       //Shuffles the deck.
+        {
+            currentCard = 0;
+            for (int first = 0; first < deck.Length; first++)
+            {
+                int second = randomNumber.Next(numberOfCards);
+                Card temp = deck[first];
+                deck[first] = deck[second];
+                deck[second] = temp;
+            }
+        }
+        public Card DealOneCard()   // Deals one card from the deck.
+        {
+            if (currentCard < 1)
+                return deck[currentCard++];
+            else
+                return null;
+        }
+
+
     }
-}  
+}

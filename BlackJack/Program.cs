@@ -8,39 +8,54 @@ namespace BlackJack
 {
     class Program
     {
-        // TODO GÖR KLASS DIAGRAM
         //TODO Game ska hålla reda på vem som vinner , värdet på handen etc
 
         static void Main(string[] args)
         {
+            Deck deck1 = new Deck();
+            deck1.Shuffle();
             
             Console.WriteLine("---♥-♠-♦-♣--Welome-To-Blackjack--♥-♠-♦-♣---");
 
 
 
-
-            Player player = new Player(100);
-            string choice = Console.ReadLine();
-            var result = true;
-            // Meny to now if bets are being made, or a card is wanted
-            //loooooooooooooo
-            //lloooookok
-            while (result)
+            //Testing the logic: Deals one random card.
+            for (int i = 0; i < 52; i++)
             {
-                switch (choice)
+                Console.Write("{0,-19}", deck1.DealOneCard());
+                if ((i + 1) % 4 == 0)
                 {
-                    case "1":
-                        Console.WriteLine("");
-                        break;
-                    case "2":
-                        Console.WriteLine("");
-                        break;
-                    case "3":
-                        Console.WriteLine("");
-                        break;
+                    Console.WriteLine();
                 }
-                result = false;
             }
+
+            Console.ReadKey();
+
+
+
+
+            //Player player = new Player(100);
+            //string choice = Console.ReadLine();
+            //var result = true;
+            //// Meny to now if bets are being made, or a card is wanted
+            ////loooooooooooooo
+            ////lloooookok
+            //while (result)
+            //{
+            //    switch (choice)
+            //    {
+            //        case "1":
+            //            Console.WriteLine("");
+            //            break;
+            //        case "2":
+            //            Console.WriteLine("");
+            //            break;
+            //        case "3":
+            //            Console.WriteLine("");
+            //            break;
+            //    }
+            //    result = false;
+            //}
         }
     }
 }
