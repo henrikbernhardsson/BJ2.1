@@ -9,6 +9,8 @@ namespace BlackJack
     class Deck // metod cards in deck
     {
         //List<Card> deck = new List<Card>();
+        string[] faces = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
+        string[] suits = { "♥", "♠", "♦", "♣" };
 
         private Card[] deck;
         private int currentCard;
@@ -18,9 +20,6 @@ namespace BlackJack
 
         public Deck()
         {
-            string[] faces = { "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
-            string[] suits = { "♥", "♠", "♦", "♣" };
-
             deck = new Card[numberOfCards];
             currentCard = 0;
             randomNumber = new Random();
@@ -43,7 +42,10 @@ namespace BlackJack
 
             return deck[currentCard++];
         }
-
+        public void CardValue()
+        {
+            
+        }
 
 
     }
