@@ -9,7 +9,7 @@ namespace BlackJack
     class Deck // metod cards in deck
     {
         //List<Card> deck = new List<Card>();
-       
+
 
         private Card[] deck;
         private int currentCard;
@@ -19,8 +19,16 @@ namespace BlackJack
 
         public Deck()
         {
-            List<string> faces = new List<string>();
-            List<string> suits = new List<string>();
+            foreach (var card in deck)
+            {
+                foreach ()
+                {
+                    List<string> faces = new List<string>();
+                    List<string> suits = new List<string>();
+                }
+            
+            }
+           
             deck = new Card[numberOfCards];
             currentCard = 0;
             randomNumber = new Random();
@@ -46,8 +54,9 @@ namespace BlackJack
         public void CalculateHand()
         {
             string ValueInHand = "";
-            int Aces = 0;
+            //int Aces = 0;
             int Total = 0;
+            //TODO Ändra till nine istället för 9, One istället för 1
             switch(ValueInHand)
             {
                 case "King":
@@ -60,8 +69,6 @@ namespace BlackJack
                     "9":
                     Total += 9;
                     break;
-
-
                 case
                     "8":
                     Total += 8;
