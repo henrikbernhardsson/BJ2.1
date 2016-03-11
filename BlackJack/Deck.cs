@@ -19,13 +19,13 @@ namespace BlackJack
 
         public Deck()
         {
-            List<Card> faces = new List<Card>();
-            string[] suits = { "♥", "♠", "♦", "♣" };
+            List<string> faces = new List<string>();
+            List<string> suits = new List<string>();
             deck = new Card[numberOfCards];
             currentCard = 0;
             randomNumber = new Random();
-            for (int count = 0; count < deck.Length; count++)
-                deck[count] = new Card(faces[count % 13], suits[count / 13]);
+            //for (int length = 0; length < deck.Length; length++)
+            //    deck[length] = new Card(faces[length % 13], suits[length / 13]);
         }
         public void Shuffle()       //Shuffles the deck.
         {
@@ -45,12 +45,11 @@ namespace BlackJack
         }
         public void CalculateHand()
         {
-            string hej = "";
-            int aces = 0;
+            string ValueInHand = "";
+            int Aces = 0;
             int Total = 0;
-            switch(hej)
+            switch(ValueInHand)
             {
-             
                 case "King":
                 case "Queen":
                 case "Jack":
