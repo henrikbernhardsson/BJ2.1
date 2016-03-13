@@ -16,16 +16,18 @@ namespace BlackJack
         private const int numberOfCards = 52;
         private Random randomNumber;
 
-
+        List<string> faces = new List<string>();
+        List<string> suits = new List<string>();
         public Deck()
         {
+            
             foreach (var card in deck)
             {
-                foreach ()
-                {
-                    List<string> faces = new List<string>();
-                    List<string> suits = new List<string>();
-                }
+                //foreach ()
+                //{
+                //    //List<string> faces = new List<string>();
+                //    //List<string> suits = new List<string>();
+                //}
             
             }
            
@@ -99,14 +101,12 @@ namespace BlackJack
 
                 default:
                     throw new Exception("Didnt recognize your card");
-                    break;
                     
 
-
-
             }
+            
         }
-
+  
 
     }
 }
