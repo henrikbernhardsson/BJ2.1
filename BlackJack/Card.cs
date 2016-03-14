@@ -38,7 +38,7 @@ namespace BlackJack
             faces.Add("Queen");
             faces.Add("King");
 
-            suits.Add("Heart");
+            suits.Add("Hearts");
             suits.Add("Clubs");
             suits.Add("Spades");
             suits.Add("Diamonds");
@@ -48,7 +48,7 @@ namespace BlackJack
             foreach (var item in faces)
             {
                 //var cards = new Card(item, suits[0]);
-                Console.WriteLine(item + suits[0]);
+                Console.WriteLine("{0} of {1} ", item, suits[0]);
 
             }
         }
