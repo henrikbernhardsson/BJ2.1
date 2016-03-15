@@ -41,7 +41,7 @@ namespace BlackJack
         }
         public override string ToString()
         {
-            return $"{face} of {suit} \n";
+            return $"{face} of {suit} ";
         }
               
     }

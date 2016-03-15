@@ -9,9 +9,7 @@ namespace BlackJack
     class Deck 
     {
 
-        private int currentCard;
-        private const int numberOfCards = 52;
-
+        private int currentCard = 0;
         public List<Card> DeckList = new List<Card>();
         public Deck()
         {
@@ -42,9 +40,8 @@ namespace BlackJack
                 DeckList[n] = value;
             }
         }
-        public Card DealOneCard()   // Deals one card from the deck.
+        public Card DealOneCard()   // Deals one card from the DeckList.
         {
-
             return DeckList[currentCard++];
         }
         public void CalculateHand()
