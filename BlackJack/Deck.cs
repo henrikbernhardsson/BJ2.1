@@ -36,15 +36,17 @@ namespace BlackJack
             //for (int length = 0; length < deck.Length; length++)
             //    deck[length] = new Card(faces[length % 13], suits[length / 13]);
         }
-        public void Shuffle()       //TODO fixa denna!!
+        public void Shuffle()       //Shuffles the DeckList
         {
-            currentCard = 0;
-            for (int first = 0; first < DeckList.Count; first++)
+            int n = DeckList.Count;
+            Random rnd = new Random();
+            while (n > 1)
             {
-                int second = randomNumber.Next(numberOfCards);
-                Card temp = deck[first];
-                DeckList[first] = DeckList[second];
-                DeckList[second] = temp;
+                int k = (rnd.Next(0, n) % n);
+                n--;
+                Card value = DeckList[k];
+                DeckList[k] = DeckList[n];
+                DeckList[n] = value;
             }
         }
         public Card DealOneCard()   // Deals one card from the deck.
