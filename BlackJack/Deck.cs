@@ -16,20 +16,19 @@ namespace BlackJack
         private const int numberOfCards = 52;
         private Random randomNumber;
 
-        List<string> faces = new List<string>();
-        List<string> suits = new List<string>();
+        public List<Card> DeckList = new List<Card>();
         public Deck()
         {
             
-            foreach (var card in deck)
-            {
-                //foreach ()
-                //{
-                //    //List<string> faces = new List<string>();
-                //    //List<string> suits = new List<string>();
-                //}
+           // foreach (var card in deck)
+            //{
+            //    //foreach ()
+            //    //{
+            //    //    //List<string> faces = new List<string>();
+            //    //    //List<string> suits = new List<string>();
+            //    //}
             
-            }
+            //}
            
             deck = new Card[numberOfCards];
             currentCard = 0;
@@ -37,15 +36,15 @@ namespace BlackJack
             //for (int length = 0; length < deck.Length; length++)
             //    deck[length] = new Card(faces[length % 13], suits[length / 13]);
         }
-        public void Shuffle()       //Shuffles the deck.
+        public void Shuffle()       //TODO fixa denna!!
         {
             currentCard = 0;
-            for (int first = 0; first < deck.Length; first++)
+            for (int first = 0; first < DeckList.Count; first++)
             {
                 int second = randomNumber.Next(numberOfCards);
                 Card temp = deck[first];
-                deck[first] = deck[second];
-                deck[second] = temp;
+                DeckList[first] = DeckList[second];
+                DeckList[second] = temp;
             }
         }
         public Card DealOneCard()   // Deals one card from the deck.
@@ -55,48 +54,41 @@ namespace BlackJack
         }
         public void CalculateHand()
         {
-            string ValueInHand = "";
+            var ValueInHand = "";
             //int Aces = 0;
             int Total = 0;
             //TODO Ändra till nine istället för 9, One istället för 1
             switch(ValueInHand)
             {
+                case "Two":
+                    Total += 2;
+                    break;
+                case "Three":
+                    Total += 3;
+                    break;
+                case "Four":
+                    Total += 4;
+                    break;
+                case "Five":
+                    Total += 5;
+                    break;
+                case "Six":
+                    Total += 6;
+                    break;
+                case "Seven":
+                    Total += 7;
+                    break;
+                case "Eight":
+                    Total += 8;
+                    break;
+                case "Nine":
+                    Total += 9;
+                    break;
                 case "King":
                 case "Queen":
                 case "Jack":
-                case "10":
+                case "Ten":
                     Total += 10;
-                         break;
-                case
-                    "9":
-                    Total += 9;
-                    break;
-                case
-                    "8":
-                    Total += 8;
-                    break;
-                case
-                    "7":
-                    Total += 7;
-                    break;
-                case
-                    "6":
-                    Total += 6;
-                    break;
-                case
-                    "5":
-                    Total += 5;
-                    break;
-                case
-                    "4":
-                    Total += 4;
-                    break;
-                case
-                    "3":
-                    Total += 3;
-                    break;
-                case "2":
-                    Total += 2;
                     break;
 
                 default:
