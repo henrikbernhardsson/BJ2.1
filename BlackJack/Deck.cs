@@ -6,35 +6,28 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    class Deck // metod cards in deck
+    class Deck 
     {
-        //List<Card> deck = new List<Card>();
 
-
-        private Card[] deck;
         private int currentCard;
         private const int numberOfCards = 52;
-        private Random randomNumber;
 
         public List<Card> DeckList = new List<Card>();
         public Deck()
         {
-            
-           // foreach (var card in deck)
-            //{
-            //    //foreach ()
-            //    //{
-            //    //    //List<string> faces = new List<string>();
-            //    //    //List<string> suits = new List<string>();
-            //    //}
-            
-            //}
-           
-            deck = new Card[numberOfCards];
-            currentCard = 0;
-            randomNumber = new Random();
-            //for (int length = 0; length < deck.Length; length++)
-            //    deck[length] = new Card(faces[length % 13], suits[length / 13]);
+            var card1 = new Card();
+
+            foreach (var item in card1.faces)
+            {
+                var hearts = new Card(item, card1.suits[0]);
+                var clubs = new Card(item, card1.suits[1]);
+                var spades = new Card(item, card1.suits[2]);
+                var diamonds = new Card(item, card1.suits[3]);
+                DeckList.Add(hearts);
+                DeckList.Add(clubs);
+                DeckList.Add(spades);
+                DeckList.Add(diamonds);
+            }
         }
         public void Shuffle()       //Shuffles the DeckList
         {
@@ -52,14 +45,13 @@ namespace BlackJack
         public Card DealOneCard()   // Deals one card from the deck.
         {
 
-            return deck[currentCard++];
+            return DeckList[currentCard++];
         }
         public void CalculateHand()
         {
             var ValueInHand = "";
             //int Aces = 0;
             int Total = 0;
-            //TODO Ändra till nine istället för 9, One istället för 1
             switch(ValueInHand)
             {
                 case "Two":
