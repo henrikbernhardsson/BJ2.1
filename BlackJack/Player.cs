@@ -32,6 +32,8 @@ namespace BlackJack
         public void PlayerHand()
         {
             //Console.WriteLine("Here is your first card ");
+            // if satser för att göra så att playerns totala värde ökar för varje kort,
+            // den samma för dealern, korten ska också öka i antal.
         }
     }
 }
