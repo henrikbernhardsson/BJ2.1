@@ -8,8 +8,8 @@ namespace BlackJack
 {
     class Card
     {
-        private string face;
-        private string suit;
+        public string face;
+        public string suit;
         public List<string> faces = new List<string>();
         public List<string> suits = new List<string>();
 

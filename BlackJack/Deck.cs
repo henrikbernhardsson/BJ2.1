@@ -44,9 +44,9 @@ namespace BlackJack
         {
             return DeckList[currentCard++];
         }
-        public void CalculateHand()
+        public void CalculateHand(string _ValueInHand)
         {
-            var ValueInHand = "";
+            string ValueInHand = _ValueInHand;
             //int Aces = 0;
             int Total = 0;
             switch(ValueInHand)
