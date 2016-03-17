@@ -8,7 +8,7 @@ namespace BlackJack
 {
     class Deck 
     {
-
+        Player player = new Player(100);
         private int currentCard = 0;
         public List<Card> DeckList = new List<Card>();
         public Deck()
@@ -46,6 +46,8 @@ namespace BlackJack
         }
         public void CalculateHand(string _ValueInHand)
         {
+            string ace = "";
+            
             string ValueInHand = _ValueInHand;
             //int Aces = 0;
             int Total = 0;
@@ -80,6 +82,10 @@ namespace BlackJack
                 case "Jack":
                 case "Ten":
                     Total += 10;
+                    break;
+                case "Ace":
+                    player.Ace(Total);
+                    
                     break;
 
                 default:

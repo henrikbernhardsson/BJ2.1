@@ -16,12 +16,16 @@ namespace BlackJack
 
             NewDeck.Shuffle();
 
-            Console.WriteLine("Press enter to deal one card from the shuffled deck..");
-            Console.ReadKey();
-            var newcard = NewDeck.DealOneCard();
-            
-            NewDeck.CalculateHand(newcard.face);
-            Console.WriteLine(newcard.face);
+            Console.WriteLine("Press enter to start playing");
+            Console.Clear();
+            Console.WriteLine("Here is your first card from dealer");
+            var PlayerCard = NewDeck.DealOneCard();
+            Console.WriteLine(PlayerCard);
+            Console.WriteLine("Dealer gets a card");
+            var DealerCard = NewDeck.DealOneCard();
+            Console.WriteLine(DealerCard);
+
+            NewDeck.CalculateHand(PlayerCard.face);
             Console.WriteLine("Press enter to print the entire Deck of Cards..");
             Console.ReadKey();
             foreach (var item in NewDeck.DeckList)
