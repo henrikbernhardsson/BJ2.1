@@ -94,9 +94,21 @@ namespace BlackJack
 
             }
             return Total;
+
             
         }
-  
+        public int Ace(int Total)
+        {
+            int aceValue = 0;
+            while (aceValue != 1 && aceValue != 11)
+            {
+                Console.WriteLine("Do you want the ace to count as 1 or 11? ");
+                aceValue = int.Parse(Console.ReadLine());
+                Total += aceValue;
+            }
+            return Total;
+        }
+
 
     }
 }

@@ -12,12 +12,10 @@ namespace BlackJack
         Card cardssen = new Card();
         List<Card> PlayersHand = new List<Card>();
         public int _balance { get; set; }
-        public string PlayersHanding { get; set; }
 
         public Player(int Balance)
         {
             this._balance = Balance;
-            this.PlayersHanding = PlayersHanding;
 
             int inputbyPlayer = int.Parse(Console.ReadLine());
 
@@ -27,17 +25,7 @@ namespace BlackJack
         }
         
         
-        public int Ace(int Total)
-        {
-            int aceValue = 0;
-            while (aceValue != 1 && aceValue != 11)
-            {
-                Console.WriteLine("Do you want the ace to count as 1 or 11? ");
-                aceValue = int.Parse(Console.ReadLine());
-                Total += aceValue;
-            }
-            return Total;
-        }
+       
         //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
         public int PlayerHand()
         {
