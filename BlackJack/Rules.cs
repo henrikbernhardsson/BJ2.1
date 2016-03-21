@@ -17,5 +17,14 @@ namespace BlackJack
     // cw (one more card? y/n)
     class Rules
     {
+        public void gaming ()
+        {
+            Card cardsses = new Card();
+            if (cardsses.face == "21")
+            {
+                Console.WriteLine();
+            }
+
+        }
     }
 }

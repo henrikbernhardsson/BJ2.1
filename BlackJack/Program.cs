@@ -13,12 +13,13 @@ namespace BlackJack
         static void Main(string[] args)
         {
             var NewDeck = new Deck();
+            
 
             NewDeck.Shuffle();
 
             Console.WriteLine("Press enter to start playing");
             Console.Clear();
-            Console.WriteLine("Here is your first card from dealer");
+            Console.WriteLine("Here is your first card from the dealer");
             var PlayerCard = NewDeck.DealOneCard();
             Console.WriteLine(PlayerCard);
             Console.WriteLine("Dealer gets a card");

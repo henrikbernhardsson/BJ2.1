@@ -44,7 +44,7 @@ namespace BlackJack
         {
             return DeckList[currentCard++];
         }
-        public void CalculateHand(string _ValueInHand)
+        public int CalculateHand(string _ValueInHand)
         {
             string ace = "";
             
@@ -89,10 +89,11 @@ namespace BlackJack
                     break;
 
                 default:
-                    throw new Exception("Didnt recognize your card");
+                    throw new Exception("Didnt understand");
                     
 
             }
+            return Total;
             
         }
   
