@@ -22,7 +22,7 @@ namespace BlackJack
             Card cardsses = new Card();
             if (cardsses.face == "21")
             {
-                Console.WriteLine();
+                Console.WriteLine(cardsses);
             }
 
         }

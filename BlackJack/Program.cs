@@ -13,7 +13,8 @@ namespace BlackJack
         static void Main(string[] args)
         {
             var NewDeck = new Deck();
-            
+            Betting betting = new Betting();
+            Player player = new Player(100);
 
             NewDeck.Shuffle();
 
@@ -25,16 +26,17 @@ namespace BlackJack
             Console.WriteLine("Dealer gets a card");
             var DealerCard = NewDeck.DealOneCard();
             Console.WriteLine(DealerCard);
+            betting.BetPlayer(betting._bet);
+            
+            //NewDeck.CalculateHand(PlayerCard.face);
+            //Console.WriteLine("Press enter to print the entire Deck of Cards..");
+            //Console.ReadKey();
+            //foreach (var item in NewDeck.DeckList)
+            //{
+            //    Console.Write(item);
+            //}
 
-            NewDeck.CalculateHand(PlayerCard.face);
-            Console.WriteLine("Press enter to print the entire Deck of Cards..");
-            Console.ReadKey();
-            foreach (var item in NewDeck.DeckList)
-            {
-                Console.Write(item);
-            }
-
-            Console.ReadKey();
+            //Console.ReadKey();
 
         }
     }
