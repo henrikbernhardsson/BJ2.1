@@ -43,9 +43,8 @@ namespace BlackJack
         {
             return DeckList[currentCard++];
         }
-        public int CalculateHand(string _ValueInHand)
+        public static int CalculateHand(string _ValueInHand)
         {
-            string ace = "";
             
             string ValueInHand = _ValueInHand;
             //int Aces = 0;
@@ -96,7 +95,7 @@ namespace BlackJack
 
             
         }
-        public int Ace(int Total)
+        public static int Ace(int Total)
         {
             int aceValue = 0;
             while (aceValue != 1 && aceValue != 11)

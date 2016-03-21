@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BlackJack
@@ -15,18 +16,35 @@ namespace BlackJack
             var NewDeck = new Deck();
             Betting betting = new Betting();
             Player player = new Player(100);
+            Dealer dealer = new Dealer();
 
             NewDeck.Shuffle();
 
             Console.WriteLine("Press enter to start playing");
+            Console.ReadLine();
+            Console.Clear();
+            betting.BetPlayer(betting._bet);
             Console.Clear();
             Console.WriteLine("Here is your first card from the dealer");
             var PlayerCard = NewDeck.DealOneCard();
-            Console.WriteLine(PlayerCard);
+            player.PlayersHand(PlayerCard.face);
+            Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+            Thread.Sleep(1500);
+            
             Console.WriteLine("Dealer gets a card");
             var DealerCard = NewDeck.DealOneCard();
-            Console.WriteLine(DealerCard);
-            betting.BetPlayer(betting._bet);
+            dealer.DealerHand(DealerCard.face);
+            Console.WriteLine($"Dealer got {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
+            Thread.Sleep(1500);
+
+            Console.WriteLine("Here is your second card from the dealer");
+            PlayerCard = NewDeck.DealOneCard();
+            player.PlayersHand(PlayerCard.face);
+            Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}");
+
+            Console.ReadLine();
+            
+
             
             //NewDeck.CalculateHand(PlayerCard.face);
             //Console.WriteLine("Press enter to print the entire Deck of Cards..");

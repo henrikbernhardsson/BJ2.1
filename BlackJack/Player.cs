@@ -10,33 +10,25 @@ namespace BlackJack
     {
         Deck deck = new Deck();
         Card cardssen = new Card();
-        List<Card> playersHand = new List<Card>();
+        List<string> playersCards = new List<string>();
         public int _balance { get; set; }
 
-        //public List<Card> PlayersHand
-        //{
-        //    get
-        //    {
-        //        return playersHand;
-        //    }
-
-        //    set
-        //    {
-        //        playersHand = value;
-        //    }
-        //}
+        public void PlayersHand(string playerCard)
+        {
+            playersCards.Add(playerCard);
+        }
 
         public Player(int Balance)
         {
             this._balance = Balance;
         }
           //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
-        public int PlayerHand()
+        public int PlayerPoints()
         {
             int result = 0;
-            foreach (var card in playersHand)
+            foreach (var item in playersCards)
             {
-                result += deck.CalculateHand(card.face);
+                result += Deck.CalculateHand(item);
             }
             return result;
         }
