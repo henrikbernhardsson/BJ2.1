@@ -37,14 +37,13 @@ namespace BlackJack
         public Card(string cardFace, string cardSuit)
         {
             face = cardFace;
-            suit = cardSuit;     
+            suit = cardSuit;
         }
         public override string ToString()
         {
             return $"{face} of {suit} ";
         }
-              
+
     }
 }
-
 

@@ -9,13 +9,13 @@ namespace BlackJack
     class Dealer
     {
         List<string> dealersCards = new List<string>();
-        int dealerPoints;
+        public int dealerPoints;
         int counter;
         public void DealerHand(string dealerCard)
         {
             dealersCards.Add(dealerCard);
         }
-      
+
         public int DealerPoints()
         {
 
@@ -24,6 +24,6 @@ namespace BlackJack
             counter++;
             return dealerPoints;
         }
-        
+
     }
 }

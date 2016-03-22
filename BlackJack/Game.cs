@@ -33,7 +33,7 @@ namespace BlackJack
             //Skapa variabler/logik i både playerhand och dealerhand 
             //så att man kan se vem som ska vinner, förlorar osv
             //
-           // if (player.PlayerHand > dealer.DealerHand || player.PlayerHand == 21)
+            // if (player.PlayerHand > dealer.DealerHand || player.PlayerHand == 21)
             {
 
             }

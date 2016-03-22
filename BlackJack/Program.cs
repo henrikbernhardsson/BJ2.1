@@ -14,24 +14,25 @@ namespace BlackJack
         static void Main(string[] args)
         {
             var NewDeck = new Deck();
-            Betting betting = new Betting();
+
             Player player = new Player(100);
             Dealer dealer = new Dealer();
+            Betting betting = new Betting();
             Rules rules = new Rules();
 
-            //NewDeck.Shuffle();
+            NewDeck.Shuffle();
 
             Console.WriteLine("Press enter to start playing");
             Console.ReadLine();
             Console.Clear();
-            betting.BetPlayer(betting._bet);
+            betting.BetPlayer(betting._bets, player._balance);
             Console.Clear();
             Console.WriteLine("Here is your first card from the dealer");
             var PlayerCard = NewDeck.DealOneCard();
             player.PlayersHand(PlayerCard.face);
             Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
             Thread.Sleep(1500);
-            
+
             Console.WriteLine("Dealer gets a card");
             var DealerCard = NewDeck.DealOneCard();
             dealer.DealerHand(DealerCard.face);
@@ -54,21 +55,41 @@ namespace BlackJack
                         player.PlayersHand(PlayerCard.face);
                         Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
                         Hit = (rules.FatOrNot(player.points));
+
                         break;
                     case "2":
                         Hit = "2";
+
+                        Hit = (rules.dealerstays(player.points));
                         break;
+
+                    case "3":
+                        Hit = rules.Winner(player.points, dealer.dealerPoints);
+                        break;
+                    case "4":
+                        player._balance = betting._bets + player._balance;
+                        Console.WriteLine(player._balance);
+                        break;
+                    case "5":
+
+
+                        break;
+
+                    case "6":
+
+                        break;
+
                     default:
                         Hit = "2";
                         break;
                 }
             }
-           
+
 
             Console.ReadLine();
-            
 
-            
+
+
             //NewDeck.CalculateHand(PlayerCard.face);
             //Console.WriteLine("Press enter to print the entire Deck of Cards..");
             //Console.ReadKey();

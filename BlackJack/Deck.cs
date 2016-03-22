@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    class Deck 
+    class Deck
     {
         private int currentCard = 0;
         public List<Card> DeckList = new List<Card>();
@@ -45,11 +45,11 @@ namespace BlackJack
         }
         public static int CalculateHand(string _ValueInHand)
         {
-            
+
             string ValueInHand = _ValueInHand;
             //int Aces = 0;
             int Total = 0;
-            switch(ValueInHand)
+            switch (ValueInHand)
             {
                 case "Two":
                     Total += 2;
@@ -83,17 +83,17 @@ namespace BlackJack
                     break;
                 case "Ace":
                     Total += Ace(Total);
-                    
+
                     break;
 
                 default:
                     throw new Exception("Didnt understand");
-                    
+
 
             }
             return Total;
 
-            
+
         }
         public static int Ace(int Total)
         {
@@ -101,15 +101,6 @@ namespace BlackJack
             while (aceValue != 1 && aceValue != 11)
             {
                 Console.WriteLine("Do you want the ace to count as 1 or 11? ");
-                try
-                {
-
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
                 aceValue = int.Parse(Console.ReadLine());
                 Total = aceValue;
             }

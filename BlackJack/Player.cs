@@ -27,8 +27,8 @@ namespace BlackJack
         //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
         public int PlayerPoints()
         {
-            
-            
+
+
             points += Deck.CalculateHand(playersCards[counter]);
             counter++;
             return points;
