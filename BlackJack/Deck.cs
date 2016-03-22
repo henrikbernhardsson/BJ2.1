@@ -83,7 +83,6 @@ namespace BlackJack
                     break;
                 case "Ace":
                     Ace(Total);
-                    
                     break;
 
                 default:

@@ -11,6 +11,8 @@ namespace BlackJack
         Deck deck = new Deck();
         Card cardssen = new Card();
         List<string> playersCards = new List<string>();
+        int points = 0;
+        int counter = 0;
         public int _balance { get; set; }
 
         public void PlayersHand(string playerCard)
@@ -22,19 +24,17 @@ namespace BlackJack
         {
             this._balance = Balance;
         }
-          //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
+        //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
         public int PlayerPoints()
         {
-            int result = 0;
-            foreach (var item in playersCards)
-            {
-                result += Deck.CalculateHand(item);
-            }
-            return result;
+            
+            
+            points += Deck.CalculateHand(playersCards[counter]);
+            counter++;
+            return points;
         }
 
 
     }
 }
 
-  

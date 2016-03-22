@@ -9,18 +9,20 @@ namespace BlackJack
     class Dealer
     {
         List<string> dealersCards = new List<string>();
+        int dealerPoints;
+        int counter;
         public void DealerHand(string dealerCard)
         {
             dealersCards.Add(dealerCard);
         }
+      
         public int DealerPoints()
         {
-            int result = 0;
-            foreach (var item in dealersCards)
-            {
-                result += Deck.CalculateHand(item);
-            }
-            return result;
+
+
+            dealerPoints += Deck.CalculateHand(dealersCards[counter]);
+            counter++;
+            return dealerPoints;
         }
 
     }

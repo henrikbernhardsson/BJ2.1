@@ -40,7 +40,28 @@ namespace BlackJack
             Console.WriteLine("Here is your second card from the dealer");
             PlayerCard = NewDeck.DealOneCard();
             player.PlayersHand(PlayerCard.face);
-            Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}");
+            Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+            string Hit = "1";
+            while (Hit == "1")
+            {
+                Console.WriteLine("another card?\n1.Yes\n2.No");
+                Hit = Console.ReadLine();
+                switch (Hit)
+                {
+                    case "1":
+                        PlayerCard = NewDeck.DealOneCard();
+                        player.PlayersHand(PlayerCard.face);
+                        Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+                        break;
+                    case "2":
+                        Hit = "2";
+                        break;
+                    default:
+                        Hit = "2";
+                        break;
+                }
+            }
+           
 
             Console.ReadLine();
             
