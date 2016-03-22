@@ -34,7 +34,7 @@ namespace BlackJack
             //så att man kan se vem som ska vinner, förlorar osv
             //
             // if (player.PlayerHand > dealer.DealerHand || player.PlayerHand == 21)
-            //försök 4
+            //försök 5
             {
 
             }
