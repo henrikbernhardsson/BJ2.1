@@ -31,13 +31,13 @@ namespace BlackJack
             var PlayerCard = NewDeck.DealOneCard();
             player.PlayersHand(PlayerCard.face);
             Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
-            Thread.Sleep(1500);
+            Thread.Sleep(1200);
 
             Console.WriteLine("Dealer gets a card");
             var DealerCard = NewDeck.DealOneCard();
             dealer.DealerHand(DealerCard.face);
             Console.WriteLine($"Dealer got {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
-            Thread.Sleep(1500);
+            Thread.Sleep(1200);
 
             Console.WriteLine("Here is your second card from the dealer");
             PlayerCard = NewDeck.DealOneCard();
@@ -69,8 +69,6 @@ namespace BlackJack
                         dealer.DealerHand(DealerCard.face);
                         Console.WriteLine($"Dealer got {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
                         hit = rules.dealerstays(dealer.dealerPoints);
-                        
-                        Console.ReadLine();
                         break;
 
                     case "3":
@@ -105,15 +103,6 @@ namespace BlackJack
 
 
 
-            //NewDeck.CalculateHand(PlayerCard.face);
-            //Console.WriteLine("Press enter to print the entire Deck of Cards..");
-            //Console.ReadKey();
-            //foreach (var item in NewDeck.DeckList)
-            //{
-            //    Console.Write(item);
-            //}
-
-            //Console.ReadKey(); ......
 
         }
     }
