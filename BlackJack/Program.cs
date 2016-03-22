@@ -69,8 +69,6 @@ namespace BlackJack
                         dealer.DealerHand(DealerCard.face);
                         Console.WriteLine($"Dealer got {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
                         hit = rules.dealerstays(dealer.dealerPoints);
-                        
-                        Console.ReadLine();
                         break;
 
                     case "3":
