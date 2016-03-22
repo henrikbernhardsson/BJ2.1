@@ -21,13 +21,13 @@ namespace BlackJack
             if (Win == true)
             {
                 //öka värdet ifall man vinner
-                player._balance = betting._bet + player._balance;
+                player._balance = betting.Bet + player._balance;
                 Console.WriteLine("Du vann, du har nu: " + player._balance);
             }
             else
             {
                 // minska beloppet man hade ifall man förlorat
-                player._balance = betting._bet - player._balance;
+                player._balance = betting.Bet - player._balance;
                 Console.WriteLine("Du har tyvärr förlorat, du har nu: " + player._balance);
             }
             //Skapa variabler/logik i både playerhand och dealerhand 

@@ -25,7 +25,7 @@ namespace BlackJack
             Console.WriteLine("Press enter to start playing");
             Console.ReadLine();
             Console.Clear();
-            betting.BetPlayer(betting._bets, player._balance);
+            betting.BetPlayer(betting.Bet, player._balance);
             Console.Clear();
             Console.WriteLine("Here is your first card from the dealer");
             var PlayerCard = NewDeck.DealOneCard();
@@ -43,44 +43,59 @@ namespace BlackJack
             PlayerCard = NewDeck.DealOneCard();
             player.PlayersHand(PlayerCard.face);
             Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
-            string Hit = "1";
-            while (Hit == "1")
+            string run = "1";
+            string hit = "1";
+            while (run == "1")
             {
-                Console.WriteLine("another card?\n1.Yes\n2.No");
-                Hit = Console.ReadLine();
-                switch (Hit)
+                
+                switch (hit)
                 {
                     case "1":
+                        Console.WriteLine("another card?\n1.Yes\n2.No");
+                        hit = Console.ReadLine();
+                        if (hit == "2")
+                        {
+                            break;
+                        }
                         PlayerCard = NewDeck.DealOneCard();
                         player.PlayersHand(PlayerCard.face);
                         Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
-                        Hit = (rules.FatOrNot(player.points));
+                        hit = rules.PlayerFatOrNot(player.points);
 
                         break;
                     case "2":
-                        Hit = "2";
-
-                        Hit = (rules.dealerstays(player.points));
+                        
+                        DealerCard = NewDeck.DealOneCard();
+                        dealer.DealerHand(DealerCard.face);
+                        Console.WriteLine($"Dealer got {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
+                        hit = rules.dealerstays(dealer.dealerPoints);
+                        
+                        Console.ReadLine();
                         break;
 
                     case "3":
-                        Hit = rules.Winner(player.points, dealer.dealerPoints);
+                        hit = rules.Winner(player.points, dealer.dealerPoints);
                         break;
                     case "4":
-                        player._balance = betting._bets + player._balance;
-                        Console.WriteLine(player._balance);
+                        player._balance = (betting.Bet + player._balance);
+                        Console.WriteLine("Your balance is now: " + player._balance);
+                        hit = "6";
                         break;
                     case "5":
-
-
+                        player._balance = (player._balance - betting.Bet);
+                        Console.WriteLine("Your balance is now: " + player._balance);
+                        hit = "6";
                         break;
 
                     case "6":
-
+                        Console.WriteLine("Do you want to play again?");
+                        run = "2";
                         break;
-
+                    case "7":
+                        hit = rules.DealerFatOrNot(dealer.dealerPoints);
+                        break;
                     default:
-                        Hit = "2";
+                        
                         break;
                 }
             }
