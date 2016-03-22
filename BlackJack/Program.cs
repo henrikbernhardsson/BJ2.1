@@ -98,7 +98,7 @@ namespace BlackJack
             //    Console.Write(item);
             //}
 
-            //Console.ReadKey();
+            //Console.ReadKey(); ......
 
         }
     }
