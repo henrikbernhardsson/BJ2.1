@@ -11,7 +11,7 @@ namespace BlackJack
         Deck deck = new Deck();
         Card cardssen = new Card();
         List<string> playersCards = new List<string>();
-        int points = 0;
+        public int points = 0;
         int counter = 0;
         public int _balance { get; set; }
 

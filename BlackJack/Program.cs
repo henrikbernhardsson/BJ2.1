@@ -17,6 +17,7 @@ namespace BlackJack
             Betting betting = new Betting();
             Player player = new Player(100);
             Dealer dealer = new Dealer();
+            Rules rules = new Rules();
 
             NewDeck.Shuffle();
 
@@ -52,6 +53,7 @@ namespace BlackJack
                         PlayerCard = NewDeck.DealOneCard();
                         player.PlayersHand(PlayerCard.face);
                         Console.WriteLine($"You've got {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+                        Hit = (rules.FatOrNot(player.points));
                         break;
                     case "2":
                         Hit = "2";

@@ -17,14 +17,16 @@ namespace BlackJack
     // cw (one more card? y/n)
     class Rules
     {
-        public void gaming ()
+        public string FatOrNot (int points)
         {
-            Card cardsses = new Card();
-            if (cardsses.face == "21")
+            
+            if (points > 21)
             {
-                Console.WriteLine(cardsses);
+                Console.WriteLine("You'r fat.");
+                return "2";
             }
 
+            return "1";
         }
     }
 }
