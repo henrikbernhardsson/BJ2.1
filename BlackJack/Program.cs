@@ -19,7 +19,7 @@ namespace BlackJack
             Dealer dealer = new Dealer();
             Rules rules = new Rules();
 
-            NewDeck.Shuffle();
+            //NewDeck.Shuffle();
 
             Console.WriteLine("Press enter to start playing");
             Console.ReadLine();

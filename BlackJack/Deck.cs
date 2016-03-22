@@ -82,7 +82,8 @@ namespace BlackJack
                     Total += 10;
                     break;
                 case "Ace":
-                    Ace(Total);
+                    Total += Ace(Total);
+                    
                     break;
 
                 default:
@@ -100,8 +101,17 @@ namespace BlackJack
             while (aceValue != 1 && aceValue != 11)
             {
                 Console.WriteLine("Do you want the ace to count as 1 or 11? ");
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
                 aceValue = int.Parse(Console.ReadLine());
-                Total += aceValue;
+                Total = aceValue;
             }
             return Total;
         }

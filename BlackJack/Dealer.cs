@@ -24,6 +24,6 @@ namespace BlackJack
             counter++;
             return dealerPoints;
         }
-
+        
     }
 }
