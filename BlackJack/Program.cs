@@ -20,7 +20,7 @@ namespace BlackJack
             Betting betting = new Betting();
             Rules rules = new Rules();
 
-            NewDeck.Shuffle();
+            //NewDeck.Shuffle();
 
             Console.WriteLine("Press enter to start playing");
             Console.ReadLine();

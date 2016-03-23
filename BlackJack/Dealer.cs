@@ -19,16 +19,29 @@ namespace BlackJack
         public int DealerPoints()
         {
 
-
-            dealerPoints += Deck.CalculateHand(dealersCards[counter]);
+            if (dealersCards[counter] == "Ace")
+            {
+                dealerPoints += DealerGetsAce(dealerPoints);
+            }
+            else
+            {
+                dealerPoints += Deck.CalculateHand(dealersCards[counter]);
+            }
+            
             counter++;
             return dealerPoints;
         }
-        public string DealerGetsAce (string face)
+        public int DealerGetsAce(int handvalue)
         {
-            return face;
+            int value = 11;
+            if (handvalue >= 11)
+            {
+                value = 1;
+            }
+            return value;
         }
-        
+
+
     }
 }
 

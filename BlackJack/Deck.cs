@@ -118,7 +118,8 @@ namespace BlackJack
             }
             return Total;
         }
-       
+   
+
         // gör en try catch får fel när den frågar efter 1 och 11 och man trycker enter.
 
     }
