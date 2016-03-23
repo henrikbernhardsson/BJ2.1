@@ -8,7 +8,7 @@ namespace BlackJack
 {
     class Deck
     {
-        private int currentCard = 0;
+        public int currentCard = 0;
       
         public List<Card> DeckList = new List<Card>();
         public Deck()

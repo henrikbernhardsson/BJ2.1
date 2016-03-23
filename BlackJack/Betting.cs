@@ -12,11 +12,14 @@ namespace BlackJack
 
         public int Bet { get; set; }
 
+        //Tar emot ett Bet.
         public void BetPlayer(int _bet, int playerBalance)
         {
 
             Console.WriteLine(@"What do you want to bet, between 1-10. Your current balance is: " + "("+ playerBalance+ ")");
 
+
+            //Checkar så man sätter rätt value.
             try
             {
                 _bet = int.Parse(Console.ReadLine());

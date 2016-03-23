@@ -17,29 +17,32 @@ namespace BlackJack
     // cw (one more card? y/n)
     class Rules
     {
-        public string PlayerFatOrNot(int points)
+        //Checkar ifall playern är över 21.
+        public string PlayerBustOrNot(int points)
         {
 
             if (points > 21)
             {
-                Console.WriteLine("You'r fat.");
+                Console.WriteLine("You'r busted.");
                 return "5";
             }
 
             return "1";
         }
-
-        public string DealerFatOrNot(int points)
+        
+        //Checkar ifall dealern är över 21.
+        public string DealerBustOrNot(int points)
         {
             if (points > 21)
             {
-                Console.WriteLine("Dealer's fat.");
+                Console.WriteLine("Dealer's busted.");
                 return "4";
             }
             
             return "3";
         }
-        public string dealerstays(int points) // Om dealerns värde är totalt 17 ska den stanna
+        // Om dealerns värde är totalt 17 ska den stanna.
+        public string dealerstays(int points) 
         {
             if (points >= 17)
             {
@@ -48,6 +51,7 @@ namespace BlackJack
             }
             return "2";
         }
+        //Jämför spelarnas poäng och utser en vinnare.
         public string Winner(int playerPoints, int dealerPoints)
         {
             if (playerPoints > dealerPoints)
