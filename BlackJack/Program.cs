@@ -13,7 +13,9 @@ namespace BlackJack
 
         static void Main(string[] args)
         {
-
+            //TODO: player1.balance = 0, GameOver
+            //      dealers hidden card.
+            //      
 
 
             Game game = new Game();
