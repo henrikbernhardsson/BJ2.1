@@ -24,6 +24,11 @@ namespace BlackJack
             counter++;
             return dealerPoints;
         }
-
+        public string DealerGetsAce (string face)
+        {
+            return face;
+        }
+        
     }
 }
+

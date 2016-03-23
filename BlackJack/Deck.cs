@@ -9,6 +9,7 @@ namespace BlackJack
     class Deck
     {
         private int currentCard = 0;
+      
         public List<Card> DeckList = new List<Card>();
         public Deck()
         {
@@ -101,12 +102,24 @@ namespace BlackJack
             while (aceValue != 1 && aceValue != 11)
             {
                 Console.WriteLine("Do you want the ace to count as 1 or 11? ");
-                aceValue = int.Parse(Console.ReadLine());
+                try
+                {
+                    aceValue = int.Parse(Console.ReadLine());
+                }
+                catch (Exception )
+                {
+
+                    Console.WriteLine( "You enter wrong value");
+                }
+
+         
+ 
                 Total = aceValue;
             }
             return Total;
         }
-
+       
+        // gör en try catch får fel när den frågar efter 1 och 11 och man trycker enter.
 
     }
 }
