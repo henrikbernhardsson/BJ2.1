@@ -47,6 +47,11 @@ namespace BlackJack
                         case "1":
                             Console.WriteLine("another card?\n1.Yes\n2.No");
                             hit = Console.ReadLine();
+                            while (hit != "1" && hit != "2")
+                            {
+                                Console.WriteLine("Enter a valid option");
+                                hit = Console.ReadLine();
+                            }
                             if (hit == "2")
                             {
                                 break;
@@ -84,7 +89,7 @@ namespace BlackJack
                             string again = Console.ReadLine();
                             while (again != "1" && again != "2")
                             {
-                                Console.WriteLine("You entered a non valid option.");
+                                Console.WriteLine("You entered a non valid option, Press 1 to play again or 2 to exit the game");
                                 again = Console.ReadLine();
                             }
                             if (again == "2")
