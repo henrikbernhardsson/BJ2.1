@@ -13,13 +13,13 @@ namespace BlackJack
 
         static void Main(string[] args)
         {
-            //TODO: player1.balance = 0, GameOver
-            //      dealers hidden card.
-            //      
+          
+                 
 
 
             Game game = new Game();
-            
+            Console.WriteLine(game.Ascii(2));         //Prints Ascii picture
+            Thread.Sleep(2500);
             var NewDeck1 = new Deck();
 
             Player player1 = new Player(100);
@@ -27,7 +27,8 @@ namespace BlackJack
             Betting betting1 = new Betting();
             Rules rules1 = new Rules();
             game.RunGame(NewDeck1, player1, dealer1, betting1, rules1);
-
+            Console.WriteLine("Press any key to exit the game");
+            Console.ReadKey();
             
 
 
