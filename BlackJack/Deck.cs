@@ -27,7 +27,7 @@ namespace BlackJack
                 DeckList.Add(diamonds);
             }
         }
-        public void Shuffle()       //Shuffles the DeckList
+        public void Shuffle()       //Blandar kortleken.
         {
             int n = DeckList.Count;
             Random rnd = new Random();
@@ -40,11 +40,11 @@ namespace BlackJack
                 DeckList[n] = value;
             }
         }
-        public Card DealOneCard()   // Deals one card from the DeckList.
+        public Card DealOneCard()   // Delar ut ett kort från kortleken
         {
             return DeckList[currentCard++];
         }
-        public static int CalculateHand(string _ValueInHand)
+        public static int CalculateHand(string _ValueInHand) //Räknar ut värdet av kortet spelaren just fick.
         {
 
             string ValueInHand = _ValueInHand;
@@ -96,7 +96,7 @@ namespace BlackJack
 
 
         }
-        public static int Ace(int Total)
+        public static int Ace(int Total) //Val av Ess-värde.
         {
             int aceValue = 0;
             while (aceValue != 1 && aceValue != 11)
@@ -109,7 +109,7 @@ namespace BlackJack
                 catch (Exception )
                 {
 
-                    Console.WriteLine( "You enter wrong value");
+                    Console.WriteLine( "You entered an incorrect value");
                 }
 
          
@@ -120,7 +120,7 @@ namespace BlackJack
         }
    
 
-        // gör en try catch får fel när den frågar efter 1 och 11 och man trycker enter.
+        
 
     }
 }

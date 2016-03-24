@@ -8,13 +8,14 @@ namespace BlackJack
 {
     public class Player
     {
-        Deck deck = new Deck();
-        Card cardssen = new Card();
-        List<string> playersCards = new List<string>();
+        
+        
+        public List<string> playersCards = new List<string>();
         public int points = 0;
         int counter = 0;
         public int _balance { get; set; }
 
+        //Lägger till spelarens kort i en egen lista.
         public void PlayersHand(string playerCard)
         {
             playersCards.Add(playerCard);
@@ -24,7 +25,8 @@ namespace BlackJack
         {
             this._balance = Balance;
         }
-        //TODO KOLLA!! Ifall playershand är mindre än eller densamma som 21 
+        
+        //Räknar ut spelarens poäng för tillfället.
         public int PlayerPoints()
         {
 

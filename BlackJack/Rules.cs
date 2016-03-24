@@ -6,15 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    //1. The one closest but not over 21 wins the round. 
-    //2. Over 21, are fat and loose the game. 
-    //3. If the dealer has 17 he dont take more cards.
-    //5. Face cards(i.e.Knights, Queens and Kings) have the value of 10. 
-    //6. Ace has either value of 1 or 11 
-    //7. Most have two cards. 
-
-    //8. Least 2 cards to every player + dealer
-    // cw (one more card? y/n)
+ 
     class Rules
     {
         //Checkar ifall playern är över 21.
@@ -35,7 +27,7 @@ namespace BlackJack
         {
             if (points > 21)
             {
-                Console.WriteLine("Dealer's busted.");
+                Console.WriteLine("DEALER's busted.");
                 return "4";
             }
             
@@ -46,28 +38,33 @@ namespace BlackJack
         {
             if (points >= 17)
             {
-                Console.WriteLine("Dealer stays");
+                Console.WriteLine("DEALER stays");
                 return "7";
             }
             return "2";
         }
         //Jämför spelarnas poäng och utser en vinnare.
-        public string Winner(int playerPoints, int dealerPoints)
+        public string Winner(int playerPoints, int dealerPoints, List<string> playerHand)
         {
             if (playerPoints > dealerPoints)
             {
-                Console.WriteLine("Player wins");
+                Console.WriteLine("PLAYER wins");
                 return "4";
 
             }
             if (dealerPoints > playerPoints)
             {
-                Console.WriteLine("Dealer wins");
+                Console.WriteLine("DEALER wins");
                 return "5";
             }
             if (dealerPoints == playerPoints)
             {
-                Console.WriteLine("Dealer wins");
+                if (playerHand.Count < 5)
+                {
+                    Console.WriteLine("PLAYER Wins");
+                    return "4";
+                }
+                Console.WriteLine("DEALER wins");
                 return "5";
             }
             return "6";

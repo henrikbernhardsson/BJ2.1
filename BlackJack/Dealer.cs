@@ -11,11 +11,12 @@ namespace BlackJack
         List<string> dealersCards = new List<string>();
         public int dealerPoints;
         int counter;
+        //Lägger till kort i dealerns lista av kort.
         public void DealerHand(string dealerCard)
         {
             dealersCards.Add(dealerCard);
         }
-
+        //Räknar ut Dealerns poäng för tillfället.
         public int DealerPoints()
         {
 
@@ -31,6 +32,7 @@ namespace BlackJack
             counter++;
             return dealerPoints;
         }
+        //Om dealern får ess väljer han själv värde beroende på hans tillfälliga poäng.
         public int DealerGetsAce(int handvalue)
         {
             int value = 11;

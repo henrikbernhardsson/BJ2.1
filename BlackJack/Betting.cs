@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    //Ser ok ut
+    
     class Betting
     {
 

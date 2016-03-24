@@ -10,6 +10,7 @@ namespace BlackJack
     //Motor
     class Game
     {
+        //Kör Black Jack spelet.
         public void RunGame(Deck NewDeck, Player player, Dealer dealer, Betting betting, Rules rules)
         {
             bool keepPlaying = true;
@@ -81,7 +82,7 @@ namespace BlackJack
                             break;
 
                         case "3":
-                            hit = rules.Winner(player.points, dealer.dealerPoints);
+                            hit = rules.Winner(player.points, dealer.dealerPoints, player.playersCards);
                             break;
                         case "4":
                             Console.ForegroundColor = ConsoleColor.Green;
