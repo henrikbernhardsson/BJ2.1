@@ -18,8 +18,21 @@ namespace BlackJack
 
 
             Game game = new Game();
-            Console.WriteLine(game.Ascii(2));         //Prints Ascii picture
-            Thread.Sleep(2500);
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(game.Ascii(2));
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(game.Ascii(2));
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(game.Ascii(2));
+            Thread.Sleep(1000);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(game.Ascii(2));
+            Thread.Sleep(1000);
             var NewDeck1 = new Deck();
 
             Player player1 = new Player(100);

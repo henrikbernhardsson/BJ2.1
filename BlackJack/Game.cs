@@ -19,13 +19,14 @@ namespace BlackJack
                 bool run = true;
                 string hit = "1";
                 NewDeck.Shuffle();
+                Console.ForegroundColor = ConsoleColor.White;
                 betting.BetPlayer(betting.Bet, player._balance);
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Here is your first card");
                 var PlayerCard = NewDeck.DealOneCard();
                 player.PlayersHand(PlayerCard.face);
-                Console.WriteLine($"PLAYER: {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+                Console.WriteLine($"PLAYER: {PlayerCard}and you're currently at: {player.PlayerPoints()}\n");
                 Thread.Sleep(1200);
 
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -39,7 +40,7 @@ namespace BlackJack
                 Console.WriteLine("Here is your second card");
                 PlayerCard = NewDeck.DealOneCard();
                 player.PlayersHand(PlayerCard.face);
-                Console.WriteLine($"PLAYER: {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+                Console.WriteLine($"PLAYER: {PlayerCard}and you're currently at: {player.PlayerPoints()}\n");
                 hit = rules.PlayerBustOrNot(player.points);
                 DealerCard = NewDeck.DealOneCard();
                 
@@ -62,7 +63,7 @@ namespace BlackJack
                             }
                             PlayerCard = NewDeck.DealOneCard();
                             player.PlayersHand(PlayerCard.face);
-                            Console.WriteLine($"PLAYER: {PlayerCard}and your currently at: {player.PlayerPoints()}\n");
+                            Console.WriteLine($"PLAYER: {PlayerCard}and you're currently at: {player.PlayerPoints()}\n");
                             hit = rules.PlayerBustOrNot(player.points);
 
                             break;
@@ -70,14 +71,14 @@ namespace BlackJack
                             Console.ForegroundColor = ConsoleColor.Red;
                             dealer.DealerHand(DealerCard.face);
                             Console.WriteLine($"DEALER: {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
-                            hit = rules.dealerstays(dealer.dealerPoints);
+                            hit = rules.dealerstays(dealer.dealerPoints, player.points);
                             while (hit == "2")
                             {
                                 
                                 DealerCard = NewDeck.DealOneCard();
                                 dealer.DealerHand(DealerCard.face);
                                 Console.WriteLine($"DEALER: {DealerCard}and is currently at: {dealer.DealerPoints()}\n");
-                                hit = rules.dealerstays(dealer.dealerPoints);
+                                hit = rules.dealerstays(dealer.dealerPoints, player.points);
                             }
                             break;
 

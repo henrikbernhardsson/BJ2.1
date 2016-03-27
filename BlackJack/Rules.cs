@@ -34,9 +34,14 @@ namespace BlackJack
             return "3";
         }
         // Om dealerns värde är totalt 17 ska den stanna.
-        public string dealerstays(int points) 
+        public string dealerstays(int DealerPoints, int PlayerPoints) 
         {
-            if (points >= 17)
+            if (DealerPoints > PlayerPoints)
+            {
+                Console.WriteLine("DEALER stays");
+                return "7";
+            }
+            if (DealerPoints >= 17)
             {
                 Console.WriteLine("DEALER stays");
                 return "7";
